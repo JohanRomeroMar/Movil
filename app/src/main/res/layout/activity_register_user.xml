@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".RegisterUser">
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="Registrar"
+        app:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Regresar"
+        app:backgroundTint="#3F51B5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtFirstName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Primer nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtFirstLastName"
+        app:layout_constraintEnd_toStartOf="@+id/txtSecondName"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtLeague"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Liga"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtFirstName"
+        app:layout_constraintEnd_toStartOf="@+id/txtTeam"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtTeam"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Equipo"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtSecondName"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtSecondName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Segundo nombre"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtSecondLastName"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtSecondLastName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Segundo apellido"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtBornDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtFirstLastName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Primer apellido"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtRH"
+        app:layout_constraintEnd_toStartOf="@+id/txtSecondLastName"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtDocument"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Numero de documento"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtPhone"
+        app:layout_constraintEnd_toStartOf="@+id/txtDocType"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtPhone"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Numero de celular"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="User"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtDocType"
+        android:layout_width="66dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Tipo"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtRH"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Tipo de sangre"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtDocument"
+        app:layout_constraintEnd_toStartOf="@+id/txtBornDate"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtBornDate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Fecha de nacimiento"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/txtDocType"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="tournaments">tournaments</string>
+
+    <string-array name="torunaments">
+        <item>ByKeys</item>
+        <item>byPoints</item>
+        <item>ByTwo</item>
+    </string-array>
+</resources>

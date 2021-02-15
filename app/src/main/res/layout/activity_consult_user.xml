@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    app:tabMode="scrollable"
+    tools:context=".ConsultUser">
+
+    <Button
+        android:id="@+id/btnConsult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:gravity="center"
+        android:text="Consultar"
+        app:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtDocument"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Numero de documento"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btnConsult"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtTeam"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="35dp"
+        android:layout_marginRight="16dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Equipo"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtDocument"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/txtLeague"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="50dp"
+        app:srcCompat="@drawable/jugger_logo_727bb696"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
+    <EditText
+        android:id="@+id/txtLeague"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Liga"
+        android:inputType="textPersonName"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtDocument"
+        app:layout_constraintEnd_toStartOf="@+id/txtTeam"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Regresar"
+        android:backgroundTint="#3F51B5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/txtFFName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/txtFLName"
+        app:layout_constraintEnd_toStartOf="@+id/txtSFName"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSFName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="100dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/txtSLName"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="100dp" />
+
+    <TextView
+        android:id="@+id/txtFLName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/txtDocNum"
+        app:layout_constraintEnd_toStartOf="@+id/txtSLName"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <TextView
+        android:id="@+id/txtSLName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="100dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/txtDocType"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="100dp" />
+
+    <TextView
+        android:id="@+id/txtDocNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/txtRH"
+        app:layout_constraintEnd_toStartOf="@+id/txtDocType"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDocType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="50dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/txtBornDate"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtRH"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/txtPhone"
+        app:layout_constraintEnd_toStartOf="@+id/txtBornDate"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtBornDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="50dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/txtPhone"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/txtPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

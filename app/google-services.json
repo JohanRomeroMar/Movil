@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "671983001852",
+    "firebase_url": "https://juggerco-90a79.firebaseio.com",
+    "project_id": "juggerco-90a79",
+    "storage_bucket": "juggerco-90a79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:671983001852:android:e72ec333834387b6497779",
+        "android_client_info": {
+          "package_name": "com.example.juggerco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "671983001852-r4p7j4i2c15631uperantmvl08qd0tlq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcChXhhf8DGEZBGLGGbcbkDGwpYgZ1cW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "671983001852-r4p7j4i2c15631uperantmvl08qd0tlq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
