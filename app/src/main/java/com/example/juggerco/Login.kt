@@ -12,6 +12,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
 class Login : AppCompatActivity() {
 
@@ -23,21 +24,25 @@ class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-
         //setup
         setup()
-
     }
 
     private fun setup(){
         title="Login"
-
+        var user=FirebaseAuth.getInstance().currentUser;
+        if(user!==null){
+            var home=Intent(this,Home::class.java);
+            startActivity(home)
+            finish()
+        }
         val buttonLog: Button = findViewById(R.id.btnLogin)
         email = findViewById(R.id.emailEditTextSignIn)
         password = findViewById(R.id.passwordEditTextSignIn)
         var userType = ""
         var teamUser = ""
 
+        // Logica de inicio de sesion
         buttonLog.setOnClickListener {
             if(email.text.isNotEmpty() && password.text.isNotEmpty()){
                 FirebaseAuth.getInstance().signInWithEmailAndPassword(email.text.toString() + "@jugger.co", password.text.toString()).addOnCompleteListener {
@@ -76,5 +81,6 @@ class Login : AppCompatActivity() {
             putExtra("teamUser", teamUser)
         }
         startActivity(homeIntent)
+        finish()
     }
 }
