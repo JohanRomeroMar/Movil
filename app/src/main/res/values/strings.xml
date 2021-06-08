@@ -31,4 +31,8 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="todo">TODO</string>
+    <string name="selecciona_equipo">Selecciona equipo</string>
+    <string name="admin">Admin</string>
+    <string name="capitan">Capitan</string>
+    <string name="player">Player</string>
 </resources>
