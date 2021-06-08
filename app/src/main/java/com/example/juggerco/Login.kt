@@ -33,8 +33,8 @@ class Login : AppCompatActivity() {
         title="Login"
 
         val buttonLog: Button = findViewById(R.id.btnLogin)
-        email = findViewById(R.id.txtUser)
-        password = findViewById(R.id.txtPassword)
+        email = findViewById(R.id.emailEditTextSignIn)
+        password = findViewById(R.id.passwordEditTextSignIn)
         var userType = ""
         var teamUser = ""
 

@@ -52,4 +52,7 @@ dependencies {
 
     apply plugin: 'com.android.application'
     apply plugin: 'com.google.gms.google-services'
+
+    def lottieVersion = "3.4.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
 }
