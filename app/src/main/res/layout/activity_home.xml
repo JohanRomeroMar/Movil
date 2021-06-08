@@ -4,140 +4,369 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="@color/white"
     tools:context=".Home">
 
-    <TextView
-        android:id="@+id/txtUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:text=""
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Cerrar sesión"
-        app:backgroundTint="#3F51B5"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btnCreateTeam"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="registrar Equipo"
-        app:backgroundTint="#3F51B5"
-        app:layout_constraintBottom_toTopOf="@+id/bntCreateTournament"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btnCreatePlayer"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Registrar jugador"
-        app:backgroundTint="#3F51B5"
-        app:layout_constraintBottom_toTopOf="@+id/btnScores"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!-- Card Crear Usuario -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/txtUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:text="Jair"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/bntCreateTournament"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Crear torneo"
-        app:backgroundTint="#3F51B5"
-        app:layout_constraintBottom_toTopOf="@+id/btnConsultarJugador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
 
-    <Button
-        android:id="@+id/btnScores"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Definir marcadores"
-        app:backgroundTint="#3F51B5"
-        app:layout_constraintBottom_toTopOf="@+id/btnPasswordChange"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/txtType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:text="Prada"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/btnRegisterUser"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Crear Usuario"
-        app:backgroundTint="#3F51B5"
-        app:layout_constraintBottom_toTopOf="@+id/btnCreateTeam"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+                <Space
+                    android:layout_width="20dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
 
-    <TextView
-        android:id="@+id/txtType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:text=""
-        app:layout_constraintStart_toEndOf="@+id/txtUser"
-        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/txtTeamUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginLeft="0dp"
+                    android:layout_marginTop="0dp"
+                    android:text="Sierra"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp" />
+            </LinearLayout>
 
-    <TextView
-        android:id="@+id/txtTeamUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="32dp"
-        android:text=""
-        app:layout_constraintStart_toEndOf="@+id/txtType"
-        app:layout_constraintTop_toTopOf="parent" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_home_crearU"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:cardCornerRadius="15dp"
+                app:cardPreventCornerOverlap="false">
 
-    <Button
-        android:id="@+id/btnPasswordChange"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="Cambiar Contraseña"
-        app:backgroundTint="#3F51B5"
-        app:layout_constraintBottom_toTopOf="@+id/btnLogout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/card"
+                    android:padding="10dp">
 
-    <Button
-        android:id="@+id/btnConsultarJugador"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="Consultar Jugador"
-        app:backgroundTint="#3F51B5"
-        app:layout_constraintBottom_toTopOf="@+id/btnCreatePlayer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+                    <TextView
+                        android:id="@+id/t1"
+                        android:layout_width="186dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Crear Usuario"
+                        android:textColor="#ffff"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
+                    <TextView
+                        android:layout_width="137dp"
+                        android:layout_height="61dp"
+                        android:layout_below="@id/t1"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:text="Registra usuarios en juggerCo"
+                        android:textColor="#ffff" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:maxHeight="100dp"
+                        android:src="@drawable/jugger_logo_727bb696"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_url="https://assets9.lottiefiles.com/packages/lf20_q5pk6p1k.json"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- cARD -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+            <!-- Card Registrar Equipo -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_home_registrarE"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:cardCornerRadius="15dp"
+                app:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/card2"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/t3"
+                        android:layout_width="186dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Registrar Equipo"
+                        android:textColor="#ffff"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="130dp"
+                        android:layout_height="59dp"
+                        android:layout_below="@id/t3"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:text="Registra usuarios en juggerCo"
+                        android:textColor="#ffff" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:maxHeight="100dp"
+                        android:src="@drawable/jugger_logo_727bb696"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_url="https://assets9.lottiefiles.com/packages/lf20_5e7wgehs.json" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- cARD -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+            <!-- Card rusuario -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_home_registerJ"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:cardCornerRadius="15dp"
+                app:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/card3"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/t2"
+                        android:layout_width="186dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Registrar Jugador"
+                        android:textColor="#ffff"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="140dp"
+                        android:layout_height="53dp"
+                        android:layout_below="@id/t2"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:text="Registra usuarios en juggerCo"
+                        android:textColor="#ffff" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:maxHeight="100dp"
+                        android:src="@drawable/jugger_logo_727bb696"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_url="https://assets9.lottiefiles.com/packages/lf20_jy3vmooe.json" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- cARD -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+            <!-- Card Consultar Jugador -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_home_consultarJ"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:cardCornerRadius="15dp"
+                app:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/card"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/t4"
+                        android:layout_width="186dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Consultar Jugador"
+                        android:textColor="#ffff"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="128dp"
+                        android:layout_height="51dp"
+                        android:layout_below="@id/t4"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:text="Registra usuarios en juggerCo"
+                        android:textColor="#ffff" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:maxHeight="100dp"
+                        android:src="@drawable/jugger_logo_727bb696"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_url="https://assets10.lottiefiles.com/private_files/lf30_pytl5e9e.json" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- cARD -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+            <!-- Card Cerrar Sesion -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_home_cambiar_contraseña"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:cardCornerRadius="15dp"
+                app:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/card2"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/t6"
+                        android:layout_width="186dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Cambiar contraseña"
+                        android:textColor="#ffff"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="58dp"
+                        android:layout_below="@id/t6"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:text="Cambiar contraseña"
+                        android:textColor="#ffff" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:maxHeight="100dp"
+                        android:src="@drawable/jugger_logo_727bb696"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_url="https://assets1.lottiefiles.com/packages/lf20_tCCSYl.json"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- cARD -->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+            <!-- Card Cerrar Sesion -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btn_home_cerrar_sesion"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:cardCornerRadius="15dp"
+                app:cardPreventCornerOverlap="false">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/card3"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/t5"
+                        android:layout_width="186dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Cerrar sesion"
+                        android:textColor="#ffff"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="136dp"
+                        android:layout_height="51dp"
+                        android:layout_below="@id/t5"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="3dp"
+                        android:text="Registra usuarios en juggerCo"
+                        android:textColor="#ffff" />
+
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:maxHeight="100dp"
+                        android:src="@drawable/jugger_logo_727bb696"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_url="https://assets5.lottiefiles.com/packages/lf20_mzxqrpoh.json" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <!-- cARD -->
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

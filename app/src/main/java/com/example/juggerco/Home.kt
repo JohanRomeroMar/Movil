@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import com.google.firebase.auth.FirebaseAuth
 
 class Home : AppCompatActivity() {
@@ -30,19 +31,15 @@ class Home : AppCompatActivity() {
 
     private fun setup(email: String, type: String, teamUser: String){
 
-        val buttonLogout: Button = findViewById(R.id.btnLogout)
-
-        val buttonReg: Button = findViewById(R.id.btnRegisterUser)
-        val buttonTeamReg: Button = findViewById(R.id.btnCreateTeam)
-        val buttonPlayerReg: Button = findViewById(R.id.btnCreatePlayer)
-        val buttonCreateTournement: Button = findViewById(R.id.bntCreateTournament)
+        val buttonPlayerReg=findViewById<CardView>(R.id.btn_home_registerJ)
+        val buttonReg=findViewById<CardView>(R.id.btn_home_crearU)
+        val buttonTeamReg=findViewById<CardView>(R.id.btn_home_registrarE)
        // val buttonScores: Button = findViewById(R.id.btnScores) sin uso
-        val buttonUserCheck: Button = findViewById(R.id.btnConsultarJugador)
-        val buttonChangePassword: Button = findViewById(R.id.btnPasswordChange)
-
+        val buttonUserCheck=findViewById<CardView>(R.id.btn_home_consultarJ)
+        val buttonChangePassword=findViewById<CardView>(R.id.btn_home_cambiar_contraseña)
+        val buttonLogout=findViewById<CardView>(R.id.btn_home_cerrar_sesion)
         val userNameList = email.split("@").map { it.trim() }
         val  userName = userNameList.first()
-
         txtUser = findViewById(R.id.txtUser)
         txtType = findViewById(R.id.txtType)
         txtTeamUser = findViewById(R.id.txtTeamUser)
@@ -53,47 +50,14 @@ class Home : AppCompatActivity() {
         txtTeamUser.text = Editable.Factory.getInstance().newEditable(teamUser)
 
 
+
         if (type == "Capitan"){
             buttonReg.visibility = View.GONE
             buttonTeamReg.visibility = View.GONE
-            buttonCreateTournement.visibility = View.GONE//aun no
             buttonUserCheck.visibility = View.GONE
         }
 
-        buttonLogout.setOnClickListener {
-            FirebaseAuth.getInstance().signOut()
-            val logofIntent = Intent(this, Login::class.java)
-            startActivity(logofIntent)
-
-        }
-
-        buttonReg.setOnClickListener {
-            val registerIntent = Intent(this, Register::class.java).apply {
-                putExtra("email", email)
-                putExtra("type", type)
-                putExtra("teamUser", teamUser)
-            }
-            startActivity(registerIntent)
-        }
-
-        buttonTeamReg.setOnClickListener {
-            val registerTeamIntent = Intent(this, teamRegister::class.java).apply {
-                putExtra("email", email)
-                putExtra("type", type)
-                putExtra("teamUser", teamUser)
-            }
-            startActivity(registerTeamIntent)
-        }
-
-        buttonChangePassword.setOnClickListener {
-            val ChangePasswordIntent = Intent(this, ChangePassword::class.java).apply {
-                putExtra("email", email)
-                putExtra("type", type)
-                putExtra("teamUser", teamUser)
-            }
-            startActivity(ChangePasswordIntent)
-        }
-
+        //Registrar Jugador
         buttonPlayerReg.setOnClickListener {
             val playerRegIntent = Intent(this, RegisterUser::class.java).apply {
                 putExtra("email", email)
@@ -103,6 +67,37 @@ class Home : AppCompatActivity() {
             startActivity(playerRegIntent)
         }
 
+        //Crear Usuario
+        buttonReg.setOnClickListener {
+            val registerIntent = Intent(this, Register::class.java).apply {
+                putExtra("email", email)
+                putExtra("type", type)
+                putExtra("teamUser", teamUser)
+            }
+            startActivity(registerIntent)
+        }
+
+        // Registrar Equipo
+        buttonTeamReg.setOnClickListener {
+            val registerTeamIntent = Intent(this, teamRegister::class.java).apply {
+                putExtra("email", email)
+                putExtra("type", type)
+                putExtra("teamUser", teamUser)
+            }
+            startActivity(registerTeamIntent)
+        }
+
+        //Cambiar Contraseña
+        buttonChangePassword.setOnClickListener {
+            val ChangePasswordIntent = Intent(this, ChangePassword::class.java).apply {
+                putExtra("email", email)
+                putExtra("type", type)
+                putExtra("teamUser", teamUser)
+            }
+            startActivity(ChangePasswordIntent)
+        }
+
+        //Consultar jugador
         buttonUserCheck.setOnClickListener {
             val userCheckIntent = Intent(this, ConsultUser::class.java).apply {
                 putExtra("email", email)
@@ -112,14 +107,12 @@ class Home : AppCompatActivity() {
             startActivity(userCheckIntent)
         }
 
-        buttonCreateTournement.setOnClickListener {
-            val createTournamentIntent = Intent(this, CreateTournament::class.java).apply {
-                putExtra("email", email)
-                putExtra("type", type)
-                putExtra("teamUser", teamUser)
-            }
-            startActivity(createTournamentIntent)
-        }
+        // Cerrar Sesion
+        buttonLogout.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val logofIntent = Intent(this, Login::class.java)
+            startActivity(logofIntent)
 
+        }
     }
 }

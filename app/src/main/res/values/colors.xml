@@ -9,4 +9,7 @@
     <color name="white">#EEEBD6</color>
     <color name="primary">#6F0404</color>
     <color name="secondary">#6F0404</color>
+    <color name="card">#FFA735</color>
+    <color name="card2">#FF7767</color>
+    <color name="card3">#EFBC31</color>
 </resources>
