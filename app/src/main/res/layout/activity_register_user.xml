@@ -4,205 +4,269 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="#EEEBD6"
     tools:context=".RegisterUser">
 
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:gravity="center"
-        android:text="Registrar"
-        app:backgroundTint="#3F51B5"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Regresar"
-        app:backgroundTint="#3F51B5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-    <EditText
-        android:id="@+id/txtFirstName"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Primer nombre"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtFirstLastName"
-        app:layout_constraintEnd_toStartOf="@+id/txtSecondName"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
 
-    <EditText
-        android:id="@+id/txtLeague"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Liga"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtFirstName"
-        app:layout_constraintEnd_toStartOf="@+id/txtTeam"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+            <TextView
+                android:id="@+id/titleSignUp"
+                style="@style/Widget.AppCompat.TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:gravity="center_horizontal"
+                android:text="Crear usuario"
+                android:textAlignment="center"
+                android:textColor="@color/primary"
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/txtTeam"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Equipo"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtSecondName"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="18dp" />
 
-    <EditText
-        android:id="@+id/txtSecondName"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="32dp"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Segundo nombre"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtSecondLastName"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:helperText="Ingresa tu primer nombre">
 
-    <EditText
-        android:id="@+id/txtSecondLastName"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Segundo apellido"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtBornDate"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nombre" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/txtFirstLastName"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Primer apellido"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtRH"
-        app:layout_constraintEnd_toStartOf="@+id/txtSecondLastName"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
 
-    <EditText
-        android:id="@+id/txtDocument"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Numero de documento"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtPhone"
-        app:layout_constraintEnd_toStartOf="@+id/txtDocType"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:helperText="Ingresa tu segundo nombre">
 
-    <EditText
-        android:id="@+id/txtPhone"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Numero de celular"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtEmail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtSecondName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Segundo nombre" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/txtEmail"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="User"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/btnRegister"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
 
-    <EditText
-        android:id="@+id/txtDocType"
-        android:layout_width="66dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Tipo"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtPhone"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:helperText="Ingresa tu apellido">
 
-    <EditText
-        android:id="@+id/txtRH"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Tipo de sangre"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtDocument"
-        app:layout_constraintEnd_toStartOf="@+id/txtBornDate"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtFirstLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Apellido" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/txtBornDate"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Fecha de nacimiento"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/txtDocType"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:helperText="Ingresa tu segundo apellido">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtSecondLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Segundo apellido" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:helperText="Ingresa tu segundo tipo de documento">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtDocType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tipo de documento" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:helperText="Ingresa tu numero documento">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtDocument"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Numero de documento" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:helperText="Ingresa tu numero de telefono">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Numero de telefono" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:helperText="Ingresa tu tipo de sangre">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtRH"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tipo de sangre" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:helperText="Ingresa tu fecha de nacimiento">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtBornDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha de nacimiento" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:helperText="Ingresa tu correo">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Correo"
+                    android:inputType="textWebEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:helperText="Ingresa tu liga">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtLeague"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Liga" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:helperText="Ingresa tu equipo">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtTeam"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Equipo" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <Button
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="@string/boton_Registro" />
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="Regresar" />
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
