@@ -71,7 +71,7 @@ class ChangePassword : AppCompatActivity() {
     private fun alertSucces() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Succesful")
-        builder.setMessage("Se ha registrado el equipo con exito")
+        builder.setMessage("Se ha cambiado la contraseña con exito")
         builder.setPositiveButton("Aceptar", null)
         val dialog: AlertDialog = builder.create()
         dialog.show()
