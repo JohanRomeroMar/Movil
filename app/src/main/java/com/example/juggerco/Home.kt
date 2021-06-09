@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
 
 class Home : AppCompatActivity() {
@@ -26,6 +27,10 @@ class Home : AppCompatActivity() {
         val email:String? = bundle?.getString("email")
         val type:String? = bundle?.getString("type")
         val teamUser:String? = bundle?.getString("teamUser")
+        val analytics= FirebaseAnalytics.getInstance(this)
+        val evento= Bundle()
+        evento.putString("message","En el menu principal")
+        analytics.logEvent("Envento",evento)
         setup(email ?: "", type ?: "", teamUser ?: "")
     }
 

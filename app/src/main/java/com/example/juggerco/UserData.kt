@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import com.google.firebase.analytics.FirebaseAnalytics
 
 class UserData : AppCompatActivity() {
     private  lateinit var user: TextView
@@ -21,6 +22,10 @@ class UserData : AppCompatActivity() {
         val documentNumber: String? = bundle?.getString("documentNumber")
         val documentType: String? = bundle?.getString("documentType")
         val phoneNumber: String? = bundle?.getString("phoneNumber")
+        val analytics= FirebaseAnalytics.getInstance(this)
+        val evento= Bundle()
+        evento.putString("message","Viendo datos de usuario")
+        analytics.logEvent("Envento",evento)
         setup(firstName ?: "", secondName ?: "", lastName ?: "", secondLastName ?: "", RH ?: "", bornDate ?: "", documentNumber ?: "", documentType ?: "", phoneNumber ?: "" )
     }
     private fun setup(firstName: String, secondName: String, lastName: String, secondLastName: String, RH: String, bornDate: String, documentNumber: String, documentType: String, phoneNumber: String) {

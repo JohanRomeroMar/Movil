@@ -7,7 +7,9 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -25,11 +27,22 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         //setup
+        val analytics= FirebaseAnalytics.getInstance(this)
+        val evento= Bundle()
+        evento.putString("message","En el login")
+        analytics.logEvent("Envento",evento)
         setup()
     }
 
+
     private fun setup(){
         title="Login"
+        var recuperarContraseña= findViewById<TextView>(R.id.recuperarPassword)
+
+        recuperarContraseña.setOnClickListener {
+            var intentenew= Intent(this,RecoveredPasswordActivity::class.java)
+            startActivity(intentenew)
+        }
         var user=FirebaseAuth.getInstance().currentUser;
         if(user!==null){
             var home=Intent(this,Home::class.java);

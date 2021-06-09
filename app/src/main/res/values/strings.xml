@@ -8,6 +8,7 @@
     <string name="boton_Sesion">Ingresar</string>
     <string name="recuperar_contraseña">¿Olvidaste tu contraseña?</string>
     <string name="registrar_cuenta">¿No tienes una cuenta? Regístrate</string>
+    <string name="regresar">Regresar</string>
     <!-- SignUp -->
     <string name="titulo_signUp">Crea una Cuenta</string>
     <string name="boton_Registro">Registrarse</string>

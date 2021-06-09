@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.marginBottom
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.firestore.FirebaseFirestore
 
 class ConsultUser : AppCompatActivity() {
@@ -40,6 +41,10 @@ class ConsultUser : AppCompatActivity() {
         val email: String? = bundle?.getString("email")
         val type: String? = bundle?.getString("type")
         val teamUser: String? = bundle?.getString("teamUser")
+        val analytics= FirebaseAnalytics.getInstance(this)
+        val evento= Bundle()
+        evento.putString("message","Consulta de usuario")
+        analytics.logEvent("Envento",evento)
         setup(email ?: "", type ?: "", teamUser ?: "")
     }
 
