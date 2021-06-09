@@ -14,46 +14,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JuggerCo">
-
+        <activity android:name=".UserData"></activity>
         <activity
-            android:name=".ConsultUser"
-            android:theme="@style/Theme.Design.NoActionBar">
-
-        </activity>
-
-        <activity
-            android:name=".RegisterUser"/>
-
+            android:name=".ConsultUser"></activity>
+        <activity android:name=".RegisterUser" />
         <activity
             android:name=".ChangePassword"
-            android:theme="@style/Theme.Design.NoActionBar"/>
-
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".teamRegister"
             android:theme="@style/Theme.Design.NoActionBar" />
-
-        <activity
-            android:name=".Login"
-            >
+        <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity
-            android:name=".Register"
-            />
-
+        <activity android:name=".Register" />
         <activity
             android:name=".Home"
             android:theme="@style/Theme.Design.NoActionBar" />
-
         <activity
             android:name=".CreateTournament"
-            android:theme="@style/Theme.Design.NoActionBar"/>
-
+            android:theme="@style/Theme.Design.NoActionBar" />
     </application>
 
 </manifest>

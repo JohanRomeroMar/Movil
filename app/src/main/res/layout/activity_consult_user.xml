@@ -4,184 +4,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
-    app:tabMode="scrollable"
-    tools:context=".ConsultUser">
+    android:background="#EEEBD6"
+    tools:context=".Register">
 
-    <Button
-        android:id="@+id/btnConsult"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="357dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:gravity="center"
-        android:text="Consultar"
-        app:backgroundTint="#3F51B5"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/txtDocument"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Numero de documento"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/btnConsult"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/txtTeam"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="35dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Equipo"
-        android:inputType="textPersonName"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtDocument"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/txtLeague"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="50dp"
-        app:srcCompat="@drawable/jugger_logo_727bb696"
-        tools:ignore="MissingConstraints,VectorDrawableCompat" />
-
-    <EditText
-        android:id="@+id/txtLeague"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Liga"
-        android:inputType="textPersonName"
-        android:layout_marginBottom="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/txtDocument"
-        app:layout_constraintEnd_toStartOf="@+id/txtTeam"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/btnBack"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Regresar"
-        android:backgroundTint="#3F51B5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.5">
 
-    <TextView
-        android:id="@+id/txtFFName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/txtFLName"
-        app:layout_constraintEnd_toStartOf="@+id/txtSFName"
-        app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/titleSignUp"
+            style="@style/Widget.AppCompat.TextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:gravity="center_horizontal"
+            android:text="@string/titulo_signUp"
+            android:textAlignment="center"
+            android:textColor="@color/primary"
+            android:textSize="48sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/txtSFName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:layout_marginEnd="100dp"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/txtSLName"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="100dp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="18dp" />
 
-    <TextView
-        android:id="@+id/txtFLName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/txtDocNum"
-        app:layout_constraintEnd_toStartOf="@+id/txtSLName"
-        app:layout_constraintStart_toStartOf="parent" />
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAnimationSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="247dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/animation_signup"
+            tools:src="@tools:sample/avatars" />
 
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:helperText="Ingresa tu primer nombre">
 
-    <TextView
-        android:id="@+id/txtSLName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:layout_marginEnd="100dp"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/txtDocType"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginRight="100dp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtDocument"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Numero de documento" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/txtDocNum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/txtRH"
-        app:layout_constraintEnd_toStartOf="@+id/txtDocType"
-        app:layout_constraintStart_toStartOf="parent" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:helperText="Equipo">
 
-    <TextView
-        android:id="@+id/txtDocType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="50dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="50dp"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/txtBornDate"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtTeam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Equipo" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/txtRH"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/txtPhone"
-        app:layout_constraintEnd_toStartOf="@+id/txtBornDate"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
-    <TextView
-        android:id="@+id/txtBornDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="50dp"
-        android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/txtPhone"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:helperText="Ingresa tu primer nombre">
 
-    <TextView
-        android:id="@+id/txtPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintStart_toStartOf="parent" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtLeague"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Liga" />
+        </com.google.android.material.textfield.TextInputLayout>
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+        <Button
+            android:id="@+id/btnConsult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Consultar usuario" />
+
+        <Button
+            android:id="@+id/btnBack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="Regresar" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

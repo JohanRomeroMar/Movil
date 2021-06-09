@@ -15,7 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class ConsultUser : AppCompatActivity() {
 
-    private val  db = FirebaseFirestore.getInstance()
+    private val db = FirebaseFirestore.getInstance()
 
     private lateinit var txtFName: TextView
     private lateinit var txtSName: TextView
@@ -30,71 +30,85 @@ class ConsultUser : AppCompatActivity() {
     private lateinit var txtDocument: TextView
     private lateinit var txtLeague: EditText
     private lateinit var txtTeam: EditText
-    private lateinit var imgLogo: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_consult_user)
 
         //setup
-        var bundle:Bundle? = intent.extras
-        val email:String? = bundle?.getString("email")
-        val type:String? = bundle?.getString("type")
-        val teamUser:String? = bundle?.getString("teamUser")
+        var bundle: Bundle? = intent.extras
+        val email: String? = bundle?.getString("email")
+        val type: String? = bundle?.getString("type")
+        val teamUser: String? = bundle?.getString("teamUser")
         setup(email ?: "", type ?: "", teamUser ?: "")
     }
 
-    private fun setup(user: String, type: String, teamUser: String){
+    private fun setup(user: String, type: String, teamUser: String) {
 
-        title="registro"
+        title = "registro"
 
         val buttonCons: Button = findViewById(R.id.btnConsult)
 
-        txtFName = findViewById(R.id.txtFFName)
-        txtSName = findViewById(R.id.txtSFName)
-        txtFLName = findViewById(R.id.txtFLName)
-        txtSLName = findViewById(R.id.txtSLName)
-        txtRH = findViewById(R.id.txtRH)
-        txtBornDate = findViewById(R.id.txtBornDate)
-        txtDocNum = findViewById(R.id.txtDocNum)
-        txtDocType = findViewById(R.id.txtDocType)
-        txtPhoneNum = findViewById(R.id.txtPhone)
+        /* txtFName = findViewById(R.id.txtFFName)
+         txtSName = findViewById(R.id.txtSFName)
+         txtFLName = findViewById(R.id.txtFLName)
+         txtSLName = findViewById(R.id.txtSLName)
+         txtRH = findViewById(R.id.txtRH)
+         txtBornDate = findViewById(R.id.txtBornDate)
+         txtDocNum = findViewById(R.id.txtDocNum)
+         txtDocType = findViewById(R.id.txtDocType)
+         txtPhoneNum = findViewById(R.id.txtPhone)*/
 
         txtDocument = findViewById(R.id.txtDocument)
         txtLeague = findViewById(R.id.txtLeague)
         txtTeam = findViewById(R.id.txtTeam)
-        imgLogo = findViewById(R.id.imageView)
 
         val buttonReturn: Button = findViewById(R.id.btnBack)
 
 
         buttonCons.setOnClickListener {
-            if(txtDocument.text.toString().isNotEmpty() && txtLeague.text.toString().isNotEmpty() && txtTeam.text.toString().isNotEmpty()){
+            if (txtDocument.text.toString().isNotEmpty() && txtLeague.text.toString()
+                    .isNotEmpty() && txtTeam.text.toString().isNotEmpty()
+            ) {
                 db.collection("Leagues").document(txtLeague.text.toString().trim().toUpperCase())
                     .collection("Teams").document(txtTeam.text.toString().trim().toUpperCase())
-                    .collection("Players").document(txtDocument.text.toString().trim().toUpperCase())
+                    .collection("Players")
+                    .document(txtDocument.text.toString().trim().toUpperCase())
                     .get()
                     .addOnSuccessListener { document ->
                         alertSucces()
-                        txtFName.text = "PNombre: " + Editable.Factory.getInstance().newEditable(document.data?.get("FFName").toString())
-                        txtSName.text = "SNombre: " + Editable.Factory.getInstance().newEditable(document.data?.get("SFName").toString())
-                        txtFLName.text = "PApellido: " + Editable.Factory.getInstance().newEditable(document.data?.get("FLName").toString())
-                        txtSLName.text = "SApellido: " + Editable.Factory.getInstance().newEditable(document.data?.get("SLName").toString())
-                        txtRH.text = "RH: " + Editable.Factory.getInstance().newEditable(document.data?.get("RH").toString())
-                        txtBornDate.text = "Fecha nacimiento: " + Editable.Factory.getInstance().newEditable(document.data?.get("BornDate").toString())
-                        txtDocNum.text = "Documento: " + Editable.Factory.getInstance().newEditable(document.data?.get("DocNum").toString())
-                        txtDocType.text = "Tipo doc: " + Editable.Factory.getInstance().newEditable(document.data?.get("DocType").toString())
-                        txtPhoneNum.text = "Telefono: " + Editable.Factory.getInstance().newEditable(document.data?.get("PhoneNum").toString())
-
-                        txtDocument.visibility = View.GONE
+                        var txtFName = document.data?.get("FFName").toString()
+                        var txtSName = document.data?.get("SFName").toString()
+                        var txtFLName = document.data?.get("FLName").toString()
+                        var txtSLName = document.data?.get("SLName").toString()
+                        var txtRH = document.data?.get("RH").toString()
+                        var txtBornDate = document.data?.get("BornDate").toString()
+                        var txtDocNum = document.data?.get("DocNum").toString()
+                        var txtDocType = document.data?.get("DocType").toString()
+                        var txtPhoneNum =document.data?.get("PhoneNum").toString()
+                        println(txtFName)
+                        /*txtDocument.visibility = View.GONE
                         txtLeague.visibility = View.GONE
                         txtTeam.visibility = View.GONE
                         imgLogo.visibility = View.GONE
-                        buttonCons.visibility = View.GONE
+                        buttonCons.visibility = View.GONE*/
+
+                        val consulIntent = Intent(this, UserData::class.java).apply {
+                            putExtra("firstName", txtFName)
+                            putExtra("secondName", txtSName)
+                            putExtra("lastName", txtFLName)
+                            putExtra("secondLastName", txtSLName)
+                            putExtra("RH", txtRH)
+                            putExtra("bornDate", txtBornDate)
+                            putExtra("documentNumber", txtDocNum)
+                            putExtra("documentType", txtDocType)
+                            putExtra("phoneNumber", txtPhoneNum)
+                        }
+                        startActivity(consulIntent)
 
                     }
                     .addOnFailureListener { alertFailure() }
-            }else {
+            } else {
                 alertFailure()
             }
         }
@@ -110,8 +124,8 @@ class ConsultUser : AppCompatActivity() {
 
     }
 
-    private fun alertSucces(){
-        val builder =  AlertDialog.Builder(this)
+    private fun alertSucces() {
+        val builder = AlertDialog.Builder(this)
         builder.setTitle("Succesful")
         builder.setMessage("Se ha registrado el equipo con exito")
         builder.setPositiveButton("Aceptar", null)
@@ -119,8 +133,8 @@ class ConsultUser : AppCompatActivity() {
         dialog.show()
     }
 
-    private fun alertFailure(){
-        val builder =  AlertDialog.Builder(this)
+    private fun alertFailure() {
+        val builder = AlertDialog.Builder(this)
         builder.setTitle("Failure")
         builder.setMessage("Se ha producido un error al consultar el jugador")
         builder.setPositiveButton("Aceptar", null)
