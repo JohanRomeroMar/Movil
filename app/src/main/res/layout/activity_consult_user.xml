@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif"
             android:gravity="center_horizontal"
-            android:text="@string/titulo_signUp"
+            android:text="Consultar usuario"
             android:textAlignment="center"
             android:textColor="@color/primary"
             android:textSize="48sp"
@@ -47,20 +47,20 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:helperText="Ingresa tu primer nombre">
+            app:helperText="Numero de documento">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtDocument"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Numero de documento" />
+                android:hint="Documento" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:helperText="Equipo">
+            app:helperText="Nombre del equipo">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtTeam"
@@ -77,7 +77,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:helperText="Ingresa tu primer nombre">
+            app:helperText="Nombre de la liga">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtLeague"

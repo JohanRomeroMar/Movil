@@ -112,7 +112,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:helperText="Ingresa tu segundo tipo de documento">
+                app:helperText="Ingresa tu tipo de documento">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtDocType"
