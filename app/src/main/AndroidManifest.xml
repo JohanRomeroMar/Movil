@@ -22,8 +22,7 @@
         </activity>
 
         <activity
-            android:name=".RegisterUser"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:name=".RegisterUser"/>
 
         <activity
             android:name=".ChangePassword"
